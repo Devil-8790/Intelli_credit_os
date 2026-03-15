@@ -1,0 +1,21 @@
+# Web Framework & Server
+fastapi
+uvicorn[standard]
+pydantic
+pydantic-settings
+python-multipart
+
+# Database
+sqlalchemy
+
+# AI & Document Intelligence
+llama-parse
+google-genai
+
+# Secondary Research & Scraping
+ddgs
+
+# Reporting & Utilities
+fpdf2
+python-dotenv
+requests
