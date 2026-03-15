@@ -1,0 +1,285 @@
+/* ─────────────────────────────────────────────────────────
+   FinTech Pro — Global Styles
+   Uses Tailwind CSS for utilities + custom CSS for animations
+───────────────────────────────────────────────────────── */
+
+/* ── FONT IMPORT ── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* ── TAILWIND DIRECTIVES ── */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── RESET & BASE ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  background-color: #030d22;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* ── KEYFRAME ANIMATIONS ── */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeRight {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.85);
+  }
+}
+
+@keyframes progressBar {
+  from { width: 55%; }
+  to   { width: 85%; }
+}
+
+@keyframes counterUp {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #071028;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e40af;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2563eb;
+}
+
+/* ── SELECTION ── */
+::selection {
+  background: rgba(37, 99, 235, 0.35);
+  color: #ffffff;
+}
+
+/* ── LINKS ── */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ── BUTTON RESET ── */
+button {
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+/* ── FOCUS VISIBLE ── */
+:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 3px;
+}
+
+/* ── SECTION TRANSITIONS ── */
+section {
+  position: relative;
+}
+
+/* ── NAVBAR TRANSITION ── */
+.navbar-scrolled {
+  background-color: #ffffff !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.navbar-scrolled .nav-link {
+  color: #4b5563;
+}
+
+.navbar-scrolled .nav-logo-text {
+  color: #111827;
+}
+
+/* ── HERO ANIMATIONS ── */
+.hero-badge {
+  animation: fadeUp 0.6s 0.1s both;
+}
+
+.hero-headline {
+  animation: fadeUp 0.6s 0.25s both;
+}
+
+.hero-subtitle {
+  animation: fadeUp 0.6s 0.4s both;
+}
+
+.hero-buttons {
+  animation: fadeUp 0.6s 0.55s both;
+}
+
+/* ── PROCESS SECTION ── */
+.process-card {
+  transition: all 0.28s ease;
+}
+
+.process-card:hover {
+  background-color: #f0f5ff;
+  border-color: #bfdbfe !important;
+  box-shadow: 0 8px 32px rgba(37, 99, 235, 0.10);
+}
+
+.process-card:hover .step-badge {
+  background-color: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+}
+
+.process-card:hover .step-title {
+  color: #1e3a8a;
+}
+
+.process-card:hover .step-body {
+  color: #1e40af;
+}
+
+.process-card:hover .step-accent {
+  transform: scaleY(1);
+}
+
+.step-accent {
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.28s ease;
+}
+
+/* ── FEATURE ROWS ── */
+.feature-row {
+  transition: background 0.25s ease;
+}
+
+.feature-row:hover {
+  background-color: rgba(37, 99, 235, 0.06);
+}
+
+/* ── METRIC CARDS ── */
+.metric-card {
+  transition: all 0.25s ease;
+}
+
+.metric-card:hover {
+  background-color: #0f2a5c;
+  border-top-color: #60a5fa;
+}
+
+/* ── CTA BUTTONS ── */
+.btn-primary {
+  transition: all 0.2s ease;
+  box-shadow: 0 8px 32px rgba(37, 99, 235, 0.45);
+}
+
+.btn-primary:hover {
+  background-color: #1d4ed8 !important;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+/* ── FOOTER LINKS ── */
+.footer-link {
+  transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+  color: #ffffff !important;
+}
+
+/* ── RESPONSIVE HELPERS ── */
+@media (max-width: 768px) {
+  .hero-headline {
+    font-size: clamp(2.4rem, 8vw, 3.5rem) !important;
+  }
+
+  .features-grid-header {
+    grid-template-columns: 1fr !important;
+  }
+
+  .feature-row > div {
+    grid-template-columns: 1fr !important;
+  }
+
+  .process-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .metrics-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .cta-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .process-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .nav-links {
+    display: none !important;
+  }
+}
