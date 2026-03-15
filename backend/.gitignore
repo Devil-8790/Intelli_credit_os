@@ -1,0 +1,17 @@
+# Ignore the virtual environment (This is what is causing the error)
+myenv/
+venv/
+env/
+
+# Ignore Python cache files
+**/__pycache__/
+*.py[cod]
+
+# Ignore the SQLite database
+*.db
+
+# Ignore environment variables (Important for security!)
+.env
+
+# Ignore generated reports
+data/reports/
