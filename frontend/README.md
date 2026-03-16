@@ -1,1 +1,0 @@
-# Intelli_credit_os
